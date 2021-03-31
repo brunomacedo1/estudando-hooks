@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+/* eslint-disable import/no-anonymous-default-export */
+import React, { useState } from 'react';
+import Accordion from './components/Accordion/Accordion';
+import Search from './components/Search/Search';
+import Dropdown from './components/Dropdown/Dropdown'
+import Translate from './components/Translate/Translate';
 
-function App() {
+const items = [
+  { title: 'O que é o React?',
+    content: 'React é um framework front-end para Javascript.'
+  },
+  { title: 'Por que usar React?',
+    content: 'React é a lib favorita dos Js devs.'
+  },
+  { title: 'Como usar o React',
+    content: 'Você usa o React criando componentes.'
+  },
+];
+
+const options = [
+  {
+    label: 'A cor Vermelha',
+    value: 'red',
+  },
+  {
+    label: 'A cor Verde',
+    value: 'green',
+  },
+  {
+    label: 'Um tom de Azul',
+    value: 'blue',
+  },
+];
+
+export default () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{display: "flex", flexDirection:"column"}}>
+      <Translate/>
     </div>
   );
 }
-
-export default App;
